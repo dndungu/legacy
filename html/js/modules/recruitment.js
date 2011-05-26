@@ -25,11 +25,11 @@ core.register('recruitment', function(sandbox){
 			$('#recruitment h2').unbind('mousedown').mousedown(function(event){
 				var form = $(this).attr("form");
 				var status = $('#'+form).attr('status');
-				$('#recruitment form[status="open"]').fadeOut('fast', 'swing').attr('status','closed');
+				$('#recruitment form[status="open"]').slideUp('slow', 'swing').attr('status','closed');
 				$('#recruitment h2.open').removeClass('open');
 				if(status === 'closed'){
 					$(this).addClass('open');
-					$('#'+form).fadeIn('slow', 'swing').attr('status', 'open');					
+					$('#'+form).slideDown('slow', 'swing').attr('status', 'open');					
 				}
 			});
 			$('#recruitment input[type="reset"]').unbind("click").click(function(event){
