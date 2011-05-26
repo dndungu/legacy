@@ -29,8 +29,7 @@
 			<div class="column grid_12" id="errors"></div>
 			<div class="column grid_12" id="info"></div>		
 			<div class="column grid_12">
-				<h2 class="open" form="personal">Personal information</h2>
-				<p class="add open" form="personal"><a>edit</a></p>
+				<h2 form="personal" class="open">Personal information</h2>
 				<form id="personal" action="/user" onsubmit="return false" method="post" style="column grid_12" status="open">
 					<label class="column grid_12">First name</label>
 					<input class="column grid_6" type="text" name="firstName" value="{/root/user/firstName}"/>
@@ -58,22 +57,21 @@
 					<label class="column grid_12">Cover letter</label>
 					<textarea rows="15" cols="10" class="column grid_12" name="about"><xsl:value-of select="/root/user/about"/></textarea>					
 					<p class="column grid_12">
-						<input type="button" id="savePersonal" value="SAVE"/> <input type="reset" module="personal" value="CANCEL"/>
+						<input type="button" id="savePersonal" value="SAVE"/> <input type="reset" module="personal" id="cancelPersonal" value="CANCEL"/>
 					</p>
 				</form>
 			</div>
 			<div class="column grid_12">
 				<h2 form="education">Education</h2>
-				<span id="printEducation">
-					<xsl:for-each select="/root/education">
-						<p>
-							<strong class="nomargin grid_8"><xsl:value-of select="name"/> - <xsl:value-of select="program"/> - <xsl:value-of select="institution"/></strong><em class="nomargin grid_4"><xsl:value-of select="start"/> - <xsl:value-of select="completion"/></em>
-							<span class="nomargin grid_10"><xsl:value-of select="notes"/></span><em class="nomargin grid_2">[ <a education="{ID}" class="edit" edit="education">edit</a> ] [ <a education="{ID}" class="trash" trash="education">delete</a> ]</em>
-						</p>
-					</xsl:for-each>				
-				</span>
-				<p class="add" form="education"><a>add</a></p>
 				<form id="education" action="/education" onsubmit="return false" method="post" style="column grid_12" status="closed">
+					<span id="printEducation">
+						<xsl:for-each select="/root/education">
+							<p>
+								<strong class="nomargin grid_8"><xsl:value-of select="name"/> - <xsl:value-of select="program"/> - <xsl:value-of select="institution"/></strong><em class="nomargin grid_4"><xsl:value-of select="start"/> - <xsl:value-of select="completion"/></em>
+								<span class="nomargin grid_10"><xsl:value-of select="notes"/></span><em class="nomargin grid_2">[ <a education="{ID}" class="edit" edit="education">edit</a> ] [ <a education="{ID}" class="trash" trash="education">delete</a> ]</em>
+							</p>
+						</xsl:for-each>				
+					</span>
 					<label class="column grid_12">Grade</label>
 					<input type="text" class="column grid 1" name="grade"/>
 					<label class="column grid_12">Certification</label>
@@ -96,17 +94,16 @@
 			</div>
 			<div class="column grid_12">
 				<h2 form="experience">Experience</h2>
-				<span id="printExperience">
-					<xsl:for-each select="/root/experience">
-						<p>
-							<strong class="nomargin grid_8"><xsl:value-of select="role"/> - <xsl:value-of select="organisation"/></strong><em class="nomargin grid_4"><xsl:value-of select="start"/> - <xsl:value-of select="completion"/></em>
-							<span class="nomargin grid_10"><xsl:value-of select="technologies"/></span><em class="nomargin grid_2">[ <a experience="{ID}" class="edit" edit="experience">edit</a> ] [ <a experience="{ID}" class="trash" trash="experience">delete</a> ]</em>
-							<span class="nomargin grid_12"><xsl:value-of select="notes"/></span>
-						</p>
-					</xsl:for-each>
-				</span>
-				<p class="add" form="experience"><a>add</a></p>		
 				<form id="experience" action="/experience" onsubmit="return false" method="post" column="column grid_12" status="closed">
+					<span id="printExperience">
+						<xsl:for-each select="/root/experience">
+							<p>
+								<strong class="nomargin grid_8"><xsl:value-of select="role"/> - <xsl:value-of select="organisation"/></strong><em class="nomargin grid_4"><xsl:value-of select="start"/> - <xsl:value-of select="completion"/></em>
+								<span class="nomargin grid_10"><xsl:value-of select="technologies"/></span><em class="nomargin grid_2">[ <a experience="{ID}" class="edit" edit="experience">edit</a> ] [ <a experience="{ID}" class="trash" trash="experience">delete</a> ]</em>
+								<span class="nomargin grid_12"><xsl:value-of select="notes"/></span>
+							</p>
+						</xsl:for-each>
+					</span>
 					<label class="column grid_12">Role</label>
 					<input class="column grid_6" type="text" name="role"/>					
 					<label class="column grid_12">Organisation</label>
@@ -148,7 +145,7 @@
 			</div>
 			<div class="column grid_4"><!--
 				<strong><xsl:value-of select="/root/sections/directions/title"/></strong>
-				<xsl:value-of select="/root/sections/directions/content" disable-output-escaping="yes"/> -->
+				<xsl:value-of select="/root/sections/directions/content" disable-output-escaping="yes"/>-->
 			</div>
 		</div>
 	</div>

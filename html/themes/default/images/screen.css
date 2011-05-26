@@ -339,6 +339,16 @@ label.column {
 	float:left;
 }
 
+#recruitment h2 {
+	cursor:pointer;
+	padding:0 0 0 24px;
+	background:url(bg.png) 8px -165px scroll no-repeat transparent;
+}
+
+#recruitment h2.open {
+	background:url(bg.png) 8px -193px scroll no-repeat transparent;
+}
+
 #printEducation p, #printExperience p {
 	margin:10px 0;
 	padding:0;

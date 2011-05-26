@@ -22,24 +22,19 @@ core.register('recruitment', function(sandbox){
 			
 		},
 		navigate: function(){
-			$('#recruitment p.add').unbind('mousedown').mousedown(function(event){
+			$('#recruitment h2').unbind('mousedown').mousedown(function(event){
 				var form = $(this).attr("form");
-				var that = this;
-				if($("#"+form).attr('status') == 'closed'){
-					$(that).addClass('open');
-					$("#"+form).fadeIn('slow', 'swing', function(){
-						$(this).attr('status', 'open');
-						window.location.assign("#"+form);
-					}).find('input[type="button"]').val("ADD");
+				var status = $('#'+form).attr('status');
+				$('#recruitment form[status="open"]').fadeOut('fast', 'swing').attr('status','closed');
+				$('#recruitment h2.open').removeClass('open');
+				if(status === 'closed'){
+					$(this).addClass('open');
+					$('#'+form).fadeIn('slow', 'swing').attr('status', 'open');					
 				}
-				$('#recruitment form[status="open"]').fadeOut('slow', 'swing', function(){
-					$(this).attr('status', 'closed').siblings("p.add").removeClass('open');
-				});
 			});
 			$('#recruitment input[type="reset"]').unbind("click").click(function(event){
-				var form = $(this).attr('module');
-				$('#'+form).fadeOut().attr('status', 'closed');
-				$('#recruitment p.[form="'+form+'"]').removeClass('open');
+				var module = $(this).attr('module');
+				$('#recruitment h2[form="'+module+'"]').mousedown();
 			});
 		}(),
 		getEducation: function(){
@@ -60,6 +55,8 @@ core.register('recruitment', function(sandbox){
 					eval(expression);
 				});
 				$.post('/user/post', personal);
+				$('#recruitment h2[form="personal"]').mousedown();
+				$('#recruitment h2[form="education"]').mousedown();
 			});
 		}(),
 		saveEducation: function(){
