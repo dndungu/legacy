@@ -57,7 +57,7 @@
 					<label class="column grid_12">Cover letter</label>
 					<textarea rows="15" cols="10" class="column grid_12" name="about"><xsl:value-of select="/root/user/about"/></textarea>					
 					<p class="column grid_12">
-						<input type="button" id="savePersonal" value="SAVE"/> <input type="reset" module="personal" id="cancelPersonal" value="CANCEL"/>
+						<input type="button" id="savePersonal" value="SAVE"/> <input type="reset" module="personal" id="cancelPersonal" value="CANCEL"/> <input type="button" value="NEXT" id="nextPersonal"/>
 					</p>
 				</form>
 			</div>
@@ -88,7 +88,7 @@
 					<input name="education" type="hidden" value="0"/>
 					<textarea name="notes" class="column grid_12" rows="2"></textarea>
 					<p class="column grid_12">
-						<input type="button" value="ADD" id="addEducation"/> <input type="reset" module="education" value="CANCEL"/>
+						<input type="button" value="ADD" id="addEducation"/> <input type="reset" module="education" value="CANCEL"/> <input type="button" value="NEXT" id="nextEducation"/>
 					</p>
 				</form>
 			</div>
@@ -127,7 +127,7 @@
 					<input name="experience" type="hidden" value="0"/>
 					<textarea name="notes" class="column grid_12" rows="3"></textarea>					
 					<p class="column grid_12">
-						<input type="button" value="ADD" id="addExperience"/> <input type="reset" module="experience" value="CANCEL"/>
+						<input type="button" value="ADD" id="addExperience"/> <input type="reset" module="experience" value="CANCEL"/> <input type="button" value="PREVIOUS" id="previousExperience"/>
 					</p>					
 				</form>
 			</div>

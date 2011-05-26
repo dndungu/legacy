@@ -36,6 +36,15 @@ core.register('recruitment', function(sandbox){
 				var module = $(this).attr('module');
 				$('#recruitment h2[form="'+module+'"]').mousedown();
 			});
+			$('#nextPersonal').unbind('mousedown').mousedown(function(){
+				$('#recruitment h2[form="education"]').mousedown();
+			});
+			$('#nextEducation').unbind('mousedown').mousedown(function(){
+				$('#recruitment h2[form="experience"]').mousedown();
+			});
+			$('#previousExperience').unbind('mousedown').mousedown(function(){
+				$('#recruitment h2[form="education"]').mousedown();
+			});
 		}(),
 		getEducation: function(){
 			$.get('/education', function(response){
