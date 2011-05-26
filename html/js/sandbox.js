@@ -17,7 +17,6 @@ sandbox = function() {
 					data : data
 				};
 			}
-			this.log(3, event.type);
 			if (typeof event.data == "undefined") {
 				event.data = new Object();
 			}
