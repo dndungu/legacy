@@ -1,6 +1,7 @@
 core.register('story', function(sandbox){
 	return {
 		init: function(){
+			this.refresh();
 			sandbox.story = {};
 			sandbox.form = '';
 			sandbox.stories = [];
