@@ -10,7 +10,7 @@
 			</head>
 			<body>
 				<div id="navigation">
-					<ul class="nomargin grid_6">
+					<ul class="column grid_5">
 						<li>
 							<a href="/">Home</a>
 						</li>
@@ -109,8 +109,9 @@
 							<a href="/user/signout">Sign Out</a>
 						</li>
 					</ul>
-					<form class="column grid_4" method="post" action="/user/panel" module="search">
-						<input type="text" name="keywords" class="column grid_12" />
+					<form class="column grid_5" method="post" action="/user/panel" module="search">
+						<input type="text" name="keywords"/>
+						<a class="add">ADD NEW</a>
 					</form>
 				</div>
 				<div id="main">
@@ -121,7 +122,6 @@
 						<xsl:value-of select="/root/copyright" disable-output-escaping="yes" />
 					</p>
 				</div>
-				<script type="text/javascript" src="/js/libs/jquery-1.5.2.min.js"></script>
 				<script type="text/javascript" src="/js/libs/jquery-1.5.2.min.js"></script>
 				<script type="text/javascript" src="/js/libs/tiny_mce/tiny_mce.js"></script>
 				<script type="text/javascript" src="/js/libs/json2.js"></script>
