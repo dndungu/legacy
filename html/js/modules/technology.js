@@ -4,6 +4,7 @@ core.register('technologyPanel', function(sandbox){
 			sandbox.item = {};
 			sandbox.form = '';
 			sandbox.items = [];
+			sandbox.count = 0;
 			sandbox.listen(['technology.refresh'], this.refresh);
 			sandbox.listen(['technology.browse'], this.browse);
 			sandbox.listen(['technology.add'], this.form);
@@ -18,7 +19,8 @@ core.register('technologyPanel', function(sandbox){
 		},
 		load: function(){
 			$.get('/technology/browse', function(response){
-				sandbox.items = response instanceof Array ? response : [];
+				sandbox.items = typeof response.rows == 'object' && response.rows instanceof Array ? response.rows : [];
+				sandbox.count = sandbox.rows.length ? Number(response.count) : 0;
 			});
 			$.get('/technology/form', function(response){
 				sandbox.form = typeof response === 'string' ? response : '';
@@ -26,7 +28,8 @@ core.register('technologyPanel', function(sandbox){
 		}(),
 		refresh: function(event){
 			$.get('/technology/browse', function(response){
-				sandbox.items = response instanceof Array ? response : [];
+				sandbox.items = typeof response.rows == 'object' && response.rows instanceof Array ? response.rows : [];
+				sandbox.count = sandbox.rows.length ? Number(response.count) : 0;
 				sandbox.notify('technology.browse');
 			});
 		},

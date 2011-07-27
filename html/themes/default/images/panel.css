@@ -23,12 +23,14 @@ body {
 }
 
 .column {
+	overflow:hidden;
 	float: left;
 	display: inline-block;
 	margin: 0 1%;
 }
 
 .nomargin {
+	overflow:hidden;
 	float: left;
 	display: inline-block;
 }
@@ -157,19 +159,28 @@ body {
 }
 
 #navigation form input {
-	background: transparent;
+	float:right;
+	background: url(panel.png) 0 -309px scroll no-repeat;
+	margin: 12px 0 0;
+	height: 35px;
+	width:200px;
 	border: 0 none;
-	margin: 5px 0 0;
-	padding: 0 0 0 8px;
+	padding:0 0 0 8px;
 }
 
-#navigation form {
-	width: 300px;
-	background: url(panel.png) 0 -309px;
-	height: 35px;
-	display: inline-block;
-	float: right;
-	margin: 18px 0 0;
+#navigation .add {
+	font-size:.875em;
+	text-align:center;
+	width:90px;
+	padding:7px 0;
+	float:right;
+	margin:13px 12px 0 0;
+	background: url(panel.png) 0 -500px scroll no-repeat;
+	color:#000;
+}
+
+#navigation a.add:hover {
+	background: url(panel.png) -150px -500px scroll no-repeat;
 }
 
 #main {

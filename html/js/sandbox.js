@@ -142,7 +142,7 @@ sandbox = function() {
 			return name + ' = "' + value + '"'
 		},
 		rows : function(data) {
-			var html = '<div class="list"><div class="add">ADD NEW</div><div class="heading"><span class="column grid_7">Title</span><span class="column grid_2">updated on</span><span class="column grid_1">actions</span></div>';
+			var html = '<div class="list"><div class="heading"><span class="column grid_7">Title</span><span class="column grid_2">updated on</span><span class="column grid_1">actions</span></div>';
 			var style = 'even';
 			for (i in data) {
 				var row = data[i];
